@@ -1,1 +1,124 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$carte-visite-primary: mat.define-palette(mat.$indigo-palette);
+$carte-visite-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$carte-visite-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$carte-visite-theme: mat.define-light-theme((
+  color: (
+    primary: $carte-visite-primary,
+    accent: $carte-visite-accent,
+    warn: $carte-visite-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($carte-visite-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+
+
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(206,242,238,1) 0%, rgba(0,212,255,1) 100%);
+
+}
+body {
+  margin: 0;
+}
+
+.infos-div {
+  width: 70%;
+  height: 50%;
+}
+
+.glass-div {
+  -webkit-backdrop-filter: blur(5px);
+  padding: 20px;
+  //display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+}
+
+.id-card-input {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.center {
+  width: 75%;
+  margin: 10px auto;
+}
+
+.main-div {
+  height: 100vh;
+  width: 100%;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.status-bar {
+  height: 20px;
+  position: fixed;
+  top: 40px;
+  right: 40px;
+}
+
+
+a{
+  width: 80%;
+  margin: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  margin-top: 24px;
+  font-weight: 400;
+  transition: background-color 0.15s ease;
+  padding: 10px;
+  text-align: center;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  text-decoration: none;
+  color: black;
+}
+
+.aligned-with-icon{
+  position: relative;
+  top: -5px;
+  margin-left: 5px; /* optional */
+}
+
+/* ---------------------------------- FONT ---------------------------------- */
+// @font-face {
+//   font-family: JosefinSans-Thin;
+//   src: url(src\assets\font\JosefinSans-Thin.ttf);
+// }
+
+// .JosefinSans-Thin{
+//   font-family: JosefinSans-Thin;
+// }
